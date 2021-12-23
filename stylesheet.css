@@ -1,0 +1,95 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+#navbar{
+	display: flex;
+	align-items:center;
+}
+/* nav bar logo and image */
+#logo{
+	margin: 10px 20px;
+}
+
+#logo img{
+	margin: 3px 6px;
+	height: 45;
+}
+
+
+#navbar ul {
+
+	display: flex;
+}
+#navbar {
+	
+	background-color: black;
+	position: absolute;
+	height: 80;
+	width : 100%;
+	z-index: 2;
+	opacity: 1;
+	
+
+}
+
+
+#navbar ul li{
+	list-style:none;
+	font-size: 1.3rem;
+}
+#navbar ul li a{
+	color: white;
+	display: block;
+	padding: 3px 20px;
+	border-radius: 20px;
+	opacity: 1;
+	text-decoration: none;
+	z-index: 3;
+}
+#navbar ul li a:hover{
+	color:black;
+	background-color: white;
+}
+#home{
+    display: flex;
+    flex-direction: column;
+     padding: 10px 200px;
+    height: 550px;
+    font-color: white;
+    justify-content: center;
+    align-items: center;
+     font-family:  sans-serif;
+    z-index: 1;
+
+}
+#home{
+	background-image: url('logo.jpg');
+	background-repeat: no-repeat;
+}
+
+#home h1{
+	color : white;
+	font-size: 2.3rem;
+}
+#home p{
+	color: white;
+}
+.btn{
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: brown;
+    color: white;
+    margin: 17px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor:pointer
+
+    }
+ .login{
+ 	padding: 0px 10px 0px 800px;;
+ }
+ .signup{
+ 	padding: 0px 10px 0px 1px;
+ }

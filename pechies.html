@@ -1,0 +1,635 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Pechies</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	   <style> /* CSS Reset */
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-y: auto;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* CSS Variables */
+:root{
+    --navbar-height: 59px;
+}
+
+
+/* Navigation Bar */
+#navbar{
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+}
+
+#navbar1{
+    padding: 20px 10px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+#navbar::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    top:0px;
+    left:0px;
+    height: 100%;
+    width:100%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+/* Navigation Bar: Logo and Image */
+#logo{
+    margin: 10px 34px;
+}
+
+#logo img{
+    height: 59px;
+    margin: 3px 6px;
+}
+
+
+/* Navigation Bar: List Styling */
+
+#navbar ul{
+    display: flex;
+    font-family: 'Baloo Bhai', cursive;
+}
+
+#navbar ul li{ 
+    list-style: none;
+    font-size: 1.3rem;
+}
+
+#navbar ul li a{
+    color: white;
+    display: block;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover{
+    color: black;
+    background-color: white;
+}
+
+/* Home Section */
+#home{
+    display: flex;
+    flex-direction: column;
+    padding:3px 200px;
+    height: 550px;
+    justify-content: center;
+    align-items: center;
+}
+
+#home::before{ 
+    content: "";
+    position: absolute;
+    background: url('logo.jpg') no-repeat center center/cover;
+    height: 642px;
+    top:0px;
+    left:0px;
+    width: 100%;
+    z-index: -1;
+    opacity:0.89;
+}
+
+#home h1{
+    color:white;
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+}
+
+#home p{
+    color:white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Bree Serif', serif;
+}
+/* Services Section */
+#services{
+    margin: 34px;
+    display: flex;
+}
+#services .box{ 
+    border: 2px solid brown;
+    padding: 3px;
+    margin: 2px 5px;
+    border-radius: 28px;
+    background: #f2f2f2;
+    margin-bottom: 20px;
+}
+
+#services .box img{ 
+   height: 160px;
+   margin: auto;
+   display: block;
+}
+
+#services .box p{
+    font-family: 'Bree Serif', serif;
+
+} 
+
+/* Clients Section */
+#client-section{ 
+    position: relative;
+}
+
+#client-section::before{
+ content: "";
+ position: absolute;
+ background: url('clients.jpg');
+ width: 100%;
+ height: 100%;
+ z-index: -1;
+ opacity: 0.3;
+}
+ .login{
+    padding: 0px 10px 0px 40px;;
+ }
+ .signup{
+    padding: 0px 10px 0px 1px;
+ }
+
+#clients{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.client-item{
+    padding: 34px;
+}
+
+#clients img{
+    height: 124px;
+}
+
+
+/* Contact Section */
+#contact{
+    position: relative;
+}
+#contact::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    background: url('contact.jpg') no-repeat center center/cover;
+
+}
+#contact-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 34px;
+}
+#contact-box input, 
+#contact-box textarea{
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 9px;
+    font-size: 1.1rem;
+} 
+
+#contact-box form{
+    width: 40%;
+}
+
+#contact-box label{
+   font-size: 1.3rem;
+   font-family: 'Bree Serif', serif;
+
+}
+
+
+footer{
+    background: black;
+    color: white;
+    padding: 9px 20px;
+}
+
+/* Utility Classes */
+.h-primary{
+    font-family: 'Bree Serif', serif;
+    font-size: 3.8rem;
+    padding: 12px;
+}
+
+.h-secondary{
+    font-family: 'Bree Serif', serif;
+    font-size: 2.3rem;
+    padding: 12px;
+}
+
+.btn{
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: brown;
+    color: white;
+    margin: 17px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor:pointer;
+}
+
+.center{
+    text-align: center;
+}
+
+input[type=text] {
+  width: 130px;
+  height: 50px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+  width: 80%;
+}
+
+.searchButton {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+</style>
+	<script src="login.js"></script>
+	<script src="https://unpkg.com/cart-localstorage@1.1.4/dist/cart-localstorage.min.js" type="text/javascript"></script>
+	<style>figure {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    overflow: hidden;
+}
+figure:hover+span {
+    bottom: -36px;
+    opacity: 1;
+}
+
+.hover01 figure img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.hover01 figure:hover img {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.1);
+}</style>
+
+
+<body>
+	<nav id="navbar" >
+        <div id="logo">
+            <img src="icon.jpg" alt="Mastermeals.com">
+        </div>
+        <ul>
+            <li class="item"><a href="mywebsite2.html">Home</a></li>
+            <li class="item"><a href="mywebsite2.html">Services</a></li>
+            <li class="item"><a href="mywebsite2.html">Our Clients</a></li>
+            <li class="item"><a href="mywebsite2.html">Contact Us</a></li>
+        </ul>
+         <ul>
+		<li class="login" ><a href="login3.html"> Logout</a></li>
+		
+		
+		</ul>
+        
+    </nav>
+
+ 
+</div>
+
+	<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+		<h1 class="my-0 mr-md-auto font-weight-normal">Pechies Restaurant</h1>
+<input type="text" name="search" id="link_id" placeholder=" Pick your favorite Items..."> <button type="submit" onClick="goto()" class="searchButton" >
+        <i class="fa fa-search"></i>
+     </button>
+		
+		
+	</div  >
+	<div class="hover01 column"><figure><img src="pec1.jpeg" style="padding: 0px 100px"></figure>
+
+	<nav id="navbar1">
+			<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"><div class="rate">
+    <h1>Ratings</h1><input type="radio" id="star5" name="rate" value="5" />
+    <label for="star5" title="text">5 stars</label>
+    <input type="radio" id="star4" name="rate" value="4" />
+    <label for="star4" title="text">4 stars</label>
+    <input type="radio" id="star3" name="rate" value="3" />
+    <label for="star3" title="text">3 stars</label>
+    <input type="radio" id="star2" name="rate" value="2" />
+    <label for="star2" title="text">2 stars</label>
+    <input type="radio" id="star1" name="rate" value="1" />
+    <label for="star1" title="text">1 star</label>
+  </div></nav>
+        
+        <ul>
+            <button class = "btn" onclick ="window.location.href='review.html';">Add Review</button>&nbsp;&nbsp;
+            <button class = "btn" onclick="window.open('https://goo.gl/maps/ddR2vpUpaZNSXsHbA')">Direction</button>&nbsp;&nbsp;
+            <button class = "btn">Bookmark</button>&nbsp;&nbsp;
+            <button class = "btn">Share</button>&nbsp;&nbsp;
+
+        </ul>
+        
+    </div>
+	<div class="container" >
+		
+
+		<div class="card-deck mt-4 mb-4 text-center">
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header" id="idli">
+					<h4 class="my-0 font-weight-normal">Idli</h4>
+					<img src =https://cdn.pixabay.com/photo/2017/06/16/11/38/breakfast-2408818_1280.jpg  width="250" height="250" >
+				</div>
+				<div class="card-body">
+					<h1 class="card-title pricing-card-title">Rs 20</h1>
+					<button type="button" class="btn btn-block btn-outline-primary"
+						onClick="cartLS.add({id: 1, name: 'Idli', price: 20})">Add to
+						Cart</button>
+				</div>
+			</div>
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header" id="dosa">
+					<h4 class="my-0 font-weight-normal">dosa</h4>
+					 <img src = https://food.fnr.sndimg.com/content/dam/images/food/fullset/2019/10/9/DV3016_masala-dosa_s4x3.jpg.rend.hgtvcom.616.462.suffix/1570635680579.jpeg  width="250" height="250">
+				</div>
+				<div class="card-body">
+					<h1 class="card-title pricing-card-title">Rs 30</h1>
+					<button type="button" class="btn btn-block btn-outline-primary"
+						onClick="cartLS.add({id: 2, name: 'Dosa', price: 30})">Add to
+						Cart</button>
+				</div>
+			</div>
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header" id="parotta">
+					<h4 class="my-0 font-weight-normal">paratta</h4>
+					<img src =https://www.outlookindia.com/outlooktraveller/public/uploads/articles/explore/malabar_parotta.jpg width="250" height="250">
+				</div>
+				<div class="card-body">
+					<h1 class="card-title pricing-card-title">Rs 12</h1>
+					<button type="button" class="btn btn-block btn-outline-primary"
+						onClick="cartLS.add({id: 3, name: 'Parotta', price: 12})">Add to
+						Cart</button>
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+	<div class="container">
+	
+
+		<div class="card-deck mt-4 mb-4 text-center">
+			<div class="card mb-4 shadow-sm" id="poori">
+				<div class="card-header">
+					<h4 class="my-0 font-weight-normal">Poori</h4>
+					<img src =https://www.foodvedam.com/wp-content/uploads/2016/11/Poori.jpg  width="250" height="250" >
+				</div>
+				<div class="card-body">
+					<h1 class="card-title pricing-card-title">Rs 40</h1>
+					<button type="button" class="btn btn-block btn-outline-primary"
+						onClick="cartLS.add({id: 4, name: 'Poori', price: 40})">Add to
+						Cart</button>
+				</div>
+			</div>
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header" id="pongal">
+					<h4 class="my-0 font-weight-normal" >Pongal</h4>
+					 <img src = https://www.indianhealthyrecipes.com/wp-content/uploads/2014/09/ven-pongal-recipe.jpg width="250" height="250">
+				</div>
+				<div class="card-body">
+					<h1 class="card-title pricing-card-title">Rs 40</h1>
+					<button type="button" class="btn btn-block btn-outline-primary"
+						onClick="cartLS.add({id: 5, name: 'Pongal', price: 40})">Add to
+						Cart</button>
+				</div>
+			</div>
+			<div class="card mb-4 shadow-sm" id="vada">
+				<div class="card-header">
+					<h4 class="my-0 font-weight-normal">vada</h4>
+					<img src =https://s9c2c8i7.rocketcdn.me/wp-content/uploads/2019/12/medu-wada.jpg width="250" height="250">
+				</div>
+				<div class="card-body">
+					<h1 class="card-title pricing-card-title">Rs 10</h1>
+					<button type="button" class="btn btn-block btn-outline-primary"
+						onClick="cartLS.add({id: 6, name: 'vada', price: 10})">Add to
+						Cart</button>
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+	<div class="container">
+	
+
+		<div class="card-deck mt-4 mb-4 text-center" id="friedrice">
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header">
+					<h4 class="my-0 font-weight-normal">Fried rice</h4>
+					<img src =https://www.indianhealthyrecipes.com/wp-content/uploads/2020/12/fried-rice.jpg  width="250" height="250" >
+				</div>
+				<div class="card-body">
+					<h1 class="card-title pricing-card-title">Rs 80</h1>
+					<button type="button" class="btn btn-block btn-outline-primary"
+						onClick="cartLS.add({id: 7, name: 'Fried rice', price: 80})">Add to
+						Cart</button>
+				</div>
+			</div>
+			<div class="card mb-4 shadow-sm" id="chickenbriyani">
+				<div class="card-header">
+					<h4 class="my-0 font-weight-normal">Chicken Briyani</h4>
+					 <img src = https://www.licious.in/blog/wp-content/uploads/2020/12/Hyderabadi-chicken-Biryani.jpg width="250" height="250">
+				</div>
+				<div class="card-body">
+					<h1 class="card-title pricing-card-title">Rs 160</h1>
+					<button type="button" class="btn btn-block btn-outline-primary"
+						onClick="cartLS.add({id: 8, name: 'Chicken Briyani', price: 160})">Add to
+						Cart</button>
+				</div>
+			</div>
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header" id="muttonbriyani">
+					<h4 class="my-0 font-weight-normal">Mutton Briyani</h4>
+					<img src =https://www.licious.in/blog/wp-content/uploads/2020/12/Mutton-Biryani-600x600.jpg width="250" height="250">
+				</div>
+				<div class="card-body">
+					<h1 class="card-title pricing-card-title">Rs 200</h1>
+					<button type="button" class="btn btn-block btn-outline-primary"
+						onClick="cartLS.add({id: 9, name: 'Mutton Briyani', price: 200})">Add to
+						Cart</button>
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+	<div class="container">
+		
+
+		<div class="card-deck mt-4 mb-4 text-center" id = 'noodles'>
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header">
+					<h4 class="my-0 font-weight-normal">Noodles</h4>
+					<img src =https://www.indianhealthyrecipes.com/wp-content/uploads/2020/03/hakka-noodles-recipe.jpg width="250" height="250" >
+				</div>
+				<div class="card-body">
+					<h1 class="card-title pricing-card-title">Rs 50</h1>
+					<button type="button" class="btn btn-block btn-outline-primary"
+						onClick="cartLS.add({id: 10, name: 'Noodles', price: 50})">Add to
+						Cart</button>
+				</div>
+			</div>
+			<div class="card mb-4 shadow-sm" id ="pizza">
+				<div class="card-header">
+					<h4 class="my-0 font-weight-normal">Pizza</h4>
+					 <img src = https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcNWA1xqCPxRBqVpveeRFC4QhXexd55u9wIx_V2DQ88GiVwhc6vYHYHoOxiRKhemPJtPE&usqp=CAU width="250" height="250">
+				</div>
+				<div class="card-body">
+					<h1 class="card-title pricing-card-title">Rs 60</h1>
+					<button type="button" class="btn btn-block btn-outline-primary"
+						onClick="cartLS.add({id: 11, name: 'Pizza', price: 60})">Add to
+						Cart</button>
+				</div>
+			</div>
+			<div class="card mb-4 shadow-sm" id="burger">
+				<div class="card-header">
+					<h4 class="my-0 font-weight-normal">Burger</h4>
+					<img src =https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/burger-recipe-3.jpg width="250" height="250">
+				</div>
+				<div class="card-body">
+					<h1 class="card-title pricing-card-title">Rs 50 </h1>
+					<button type="button" class="btn btn-block btn-outline-primary"
+						onClick="cartLS.add({id: 12, name: 'Burger', price: 50})">Add to
+						Cart</button>
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="card mb-4 shadow-sm">
+			<div class="card-header">
+				<h2>Cart</h2>
+			</div>
+			<div class="card-body">
+				<table class="table">
+					<tbody class="cart">
+					</tbody>
+					<tfoot>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td class="text-right">Total: <strong class="total"></strong></td>
+						<td></td>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+	<button type="button" class="btn btn-block btn-outline-primary" onClick="window.location.href = 'pay.html'" >Continue to Pay </button>
+	<script>
+		function renderCart(items) {
+			const $cart = document.querySelector(".cart")
+			const $total = document.querySelector(".total")
+
+			$cart.innerHTML = items.map((item) => `
+					<tr>
+						<td>#${item.id}</td>
+						<td>${item.name}</td>
+						<td>${item.quantity}</td>
+						<td style="width: 60px;">	
+							<button type="button" class="btn btn-block btn-sm btn-outline-primary"
+								onClick="cartLS.quantity(${item.id},1)">+</button>
+						</td>
+						<td style="width: 60px;">	
+							<button type="button" class="btn btn-block btn-sm btn-outline-primary"
+								onClick="cartLS.quantity(${item.id},-1)">-</button>
+						</td>
+						<td class="text-right">₹${item.price}</td>
+						<td class="text-right"><Button class="btn btn-primary" onClick="cartLS.remove(${item.id})">Delete</Button></td>
+					</tr>`).join("")
+
+			$total.innerHTML = "Rs" + cartLS.total()
+		}
+		renderCart(cartLS.list())
+		cartLS.onChange(renderCart)
+	</script>
+</body>
+
+</html>

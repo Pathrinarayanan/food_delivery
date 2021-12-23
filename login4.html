@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="loginnew.css" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+ 
+</head>
+<body>
+  
+  <div class="container">
+  <div id="login_div" class="main-div">
+    <h3>User login </h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <div id="email_error">Please fill up your Email or Phone</div>
+    <input type="password" placeholder="Password..." id="password_field" />
+    <div id="pass_error">Please fill up your Password</div>
+
+    <button onclick="login()">Login to Account</button>
+  </div>
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para"> You're currently logged in.</p>
+    <button onclick="logout()">Logout</button>
+    
+  </div>
+</div>
+<script src="login1.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+       apiKey: "AIzaSyAViytrkAFPK0qLTywGvZkiw4dvGlBB5TA",
+    authDomain: "meals-app-65858.firebaseapp.com",
+    projectId: "meals-app-65858",
+    storageBucket: "meals-app-65858.appspot.com",
+    messagingSenderId: "152712793171",
+    appId: "1:152712793171:web:c93350f63ba9a47fd58aa6",
+    measurementId: "G-CCTZ4M44PL"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Payment</title>
+	<link rel="stylesheet" type="text/css" href="payment styles.css">
+<script src="https://unpkg.com/cart-localstorage@1.1.4/dist/cart-localstorage.min.js" type="text/javascript"></script>
+ </head>
+<body>
+	 <div><h2>Payment </h2><button class="btn" onclick= "window.location.href='cod.html'"> Or Cash on delivery</button></div>
+<div class="row">
+
+  <div class="col-75">
+    <div class="container">
+  
+      
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Name">
+            <label for="email"> Email</label>
+            <input type="text" id="email" name="email" placeholder="Email">
+            <label for="adr">Address</label>
+            <input type="text" id="adr" name="address" placeholder="Address">
+            <label for="city"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="City">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="State">
+              </div>
+              <div class="col-50">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip" name="zip">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+            <img src="card.jpeg">  
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth">
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <input type="submit" value="Continue to checkout" class="btn">
+      </form>
+    </div>
+  </div>
+  <div class="col-25">
+    <div class="container">
+        <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h2>Cart</h2>
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <tbody class="cart">
+          </tbody>
+          <tfoot>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="text-right">Total: <strong class="total"></strong></td>
+            <td></td>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+    <button class="btn" onclick= "window.location.href='rest.html'"> cancel order</button>
+  </div>
+</div>
+ <script>
+    function renderCart(items) {
+      const $cart = document.querySelector(".cart")
+      const $total = document.querySelector(".total")
+
+      $cart.innerHTML = items.map((item) => `
+            <td>${item.name}</td>
+            <td>&nbsp${item.quantity}</td>
+            <td style="width: 60px;"> 
+          
+            <td class="text-right">₹${item.price}</td>
+           
+          </tr>`).join("")
+
+      $total.innerHTML = "Rs" + cartLS.total()
+    }
+    renderCart(cartLS.list())
+    cartLS.onChange(renderCart)
+  </script>
+
+
+
+
+</body>
+</html>
